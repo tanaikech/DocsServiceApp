@@ -356,6 +356,8 @@ console.log(res);
 
 ![](images/fig2.png)
 
+<a name="googleslides"></a>
+
 ## For Google Slides
 
 ### 1. `createNewSlidesWithPageSize()`
