@@ -149,6 +149,8 @@ console.log(res);
 
 - For example, when the table which has the columns "A" and "B" of 100 pt and 200 pt are checked by above script, the same values of 100 and 200 for the columns "A" and "B" could be confirmed. So from this result, it is found that the column width of DOCX data and Google Document is the same.
 
+<a name="googlespreadsheet"></a>
+
 ## For Google Spreadsheet
 
 ### 1. `getImages()`
@@ -376,6 +378,8 @@ console.log(res);
 - In this method, the presentation ID of created Slides is returned.
 - "pixel" and "point" can be used for `unit` in above object.
 
+<a name="microsoftword"></a>
+
 ## For Microsoft Word
 
 ### 1. `getTableColumnWidth()`
@@ -405,6 +409,8 @@ console.log(res);
   ,
 ]
 ```
+
+<a name="microsoftexcel"></a>
 
 ## For Microsoft Excel
 
@@ -622,6 +628,8 @@ function myFunction() {
 - **`blob`** : Blob of XLSX file.
 - **`sheetName`** : Sheet name in XLSX file. The formulas are retrieved from the sheet.
 - The values are returned as 2 dimensional array.
+
+<a name="microsoftpowerpoint"></a>
 
 ## For Microsoft Powerpoint
 
