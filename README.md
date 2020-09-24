@@ -83,7 +83,7 @@ Please use this library with enabling V8 runtime.
 
 ## About Google APIs
 
-This library uses the following Google APIs. So when you want to use the library, please enable the following APIs at Advanced Google services.
+This library uses the following Google APIs. So when you want to use the library, please enable the following APIs at Advanced Google services. [Ref](https://developers.google.com/apps-script/guides/services/advanced#enabling_advanced_services)
 
 - Drive API: This is used for all methods.
 - Sheets API: This is used for Google Spreadsheet.
