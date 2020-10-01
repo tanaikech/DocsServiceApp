@@ -546,7 +546,7 @@ function myFunction() {
   const fileId = "###"; // Please set the file ID of XLSX file.
   const blob = DriveApp.getFileById(fileId).getBlob();
 
-  const res = DocsServiceApp.getExcel(blob).getAll();
+  const res = DocsServiceApp.openByExcelFileBlob(blob).getAll();
   console.log(res);
 }
 ```
@@ -565,7 +565,7 @@ function myFunction() {
   const fileId = "###"; // Please set the file ID of XLSX file.
   const blob = DriveApp.getFileById(fileId).getBlob();
 
-  const res = DocsServiceApp.getExcel(blob).getSheets();
+  const res = DocsServiceApp.openByExcelFileBlob(blob).getSheets();
   console.log(res);
 }
 ```
@@ -584,7 +584,7 @@ function myFunction() {
   const sheetName = "###"; // Please set the sheet name.
   const blob = DriveApp.getFileById(fileId).getBlob();
 
-  const res = DocsServiceApp.getExcel(blob)
+  const res = DocsServiceApp.openByExcelFileBlob(blob)
     .getSheetByName(sheetName)
     .getValues();
   console.log(res);
@@ -620,7 +620,7 @@ function myFunction() {
   const sheetName = "###"; // Please set the sheet name.
   const blob = DriveApp.getFileById(fileId).getBlob();
 
-  const res = DocsServiceApp.getExcel(blob)
+  const res = DocsServiceApp.openByExcelFileBlob(blob)
     .getSheetByName(sheetName)
     .getFormulas();
   console.log(res);
