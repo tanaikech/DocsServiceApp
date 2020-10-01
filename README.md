@@ -418,6 +418,8 @@ console.log(res);
 
 ![](images/fig3.png)
 
+> IMPORTANT: About `getValues()` and `getFormulas()` methods, in the current stage, the process costs of them is much higher than those of Google Spreadsheet service. So when you want to retrieve the values and formulas from XLSX data, I would like to recommend to use Google Spreadsheet service by converting XSLX data to Google Spreadsheet.
+
 ### 1. `getImages()`
 
 Retrieve images in and over the cell from Microsoft Excel as blob. In this case, the images are directly retrieved from Microsoft Excel.
