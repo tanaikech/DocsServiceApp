@@ -380,6 +380,12 @@ console.log(res);
 - In this method, the presentation ID of created Slides is returned.
 - "pixel" and "point" can be used for `unit` in above object.
 
+#### Sample situations
+
+When this method is used, the following application can be created.
+
+1. [Inserting Text on Image using Google Apps Script](https://gist.github.com/tanaikech/835642df109731a559e52d831bd3342d) : This is a sample script for inserting a text on an image using Google Apps Script.
+
 <a name="microsoftword"></a>
 
 ## For Microsoft Word
