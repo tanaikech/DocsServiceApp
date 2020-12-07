@@ -313,7 +313,7 @@ const object = [
   { blob: blob1, range: { row: 1, column: 1 } }, // Image is inserted in a cell "A1".
   { blob: blob2, range: { row: 5, column: 2 } }, // Image is inserted in a cell "B5".
 ];
-DocsServiceApp.openBySpreadsheetId(id)
+DocsServiceApp.openBySpreadsheetId(spreadsheetId)
   .getSheetByName("Sheet1")
   .insertImage(object);
 ```
