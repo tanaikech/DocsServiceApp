@@ -1,0 +1,30 @@
+{
+  "timeZone": "Asia/Tokyo",
+  "dependencies": {
+    "enabledAdvancedServices": [{
+      "userSymbol": "Docs",
+      "serviceId": "docs",
+      "version": "v1"
+    }, {
+      "userSymbol": "Drive",
+      "serviceId": "drive",
+      "version": "v2"
+    }, {
+      "userSymbol": "Slides",
+      "serviceId": "slides",
+      "version": "v1"
+    }, {
+      "userSymbol": "Sheets",
+      "serviceId": "sheets",
+      "version": "v4"
+    }],
+    "libraries": [{
+      "userSymbol": "ImgApp",
+      "libraryId": "1T03nYHRho6XMWYcaumClcWr6ble65mAT8OLJqRFJ5lukPVogAN2NDl-y",
+      "version": "8",
+      "developmentMode": true
+    }]
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8"
+}
