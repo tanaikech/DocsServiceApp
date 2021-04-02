@@ -96,7 +96,7 @@
         dstSheet = dstSS.getSheetByName(this.obj.sheetName);
         dstSheetId = dstSheet.getSheetId();
         tmpSheet = SpreadsheetApp.openById(tmpId).getSheets()[0].setName(`SpreadsheetAppp_${Utilities.getUuid()}`).copyTo(dstSS);
-        DriveApp.getFileById(tmpId).setTrashed(true);
+        Drive.Files.remove(tmpId);
         tmpSheetId = tmpSheet.getSheetId();
         requests = ar.map((e) => {
           e.from.sheetId = tmpSheetId;
