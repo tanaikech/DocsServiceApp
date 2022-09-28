@@ -34,6 +34,7 @@ The basic method of DocsServiceApp is to directly create and edit the data of Mi
 - Retrieve all comments in Google Spreadsheet as an object including the cell range and comments.
 - Insert images in cells of Google Spreadsheet using the image blob.
 - Create new Google Spreadsheet by setting the custom header and footer.
+- Retrieve cell coordinates of cells with the quote prefix.
 
 ### [Google Slides](#googleslides)
 
@@ -356,6 +357,32 @@ console.log(res);
 
 ![](images/fig2.png)
 
+<a name="getQuotePrefixCells"></a>
+
+### 5. `getQuotePrefixCells()`
+
+![](images/fig4.png)
+
+Retrieve cell coordinates of cells with the quote prefix. In Google Spreadsheet, when a single quote is add to the top letter of the cell value, the cell is used as the text value. When we want to search the cells with the quote prefix in Spreadsheet, unfortunately, in the current stage, this cannot be achieved using Spreadsheet service (SpreadsheetApp) and Sheets API. In this method, such cells can be retrieved. The output values are the cell coordinates of the cells with the quote prefix.
+
+#### Sample script
+
+```javascript
+const spreadsheetId = "###"; // Google Spreadsheet ID
+const res = DocsServiceApp.openBySpreadsheetId(spreadsheetId)
+  .getSheetByName("Sheet1") // Please set sheet name.
+  .getQuotePrefixCells();
+console.log(res);
+```
+
+#### Result
+
+```json
+["A1", "C3", "E1", , ,]
+```
+
+- I answered this method to [this thread at Stackoverflow](https://stackoverflow.com/a/73616511).
+
 <a name="googleslides"></a>
 
 ## For Google Slides
@@ -666,5 +693,9 @@ There are no methods yet.
 - v1.0.0 (September 24, 2020)
 
   1. Initial release.
+
+- v1.1.0 (September 28, 2022)
+
+  1. Added a new method of [`getQuotePrefixCells()`](#getQuotePrefixCells). This method can detect the cells with the quote prefix cells.
 
 [TOP](#top)
