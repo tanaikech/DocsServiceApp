@@ -235,6 +235,11 @@
         }
         return "Please set sheet name.";
       }
+
+      getNamedFunctions() {
+        gToM.call(this);
+        return new ExcelApp(this.mainObj.blob).getNamedFunctions();
+      }
     }
 
     SpreadsheetAppp.name = "SpreadsheetAppp";

@@ -35,6 +35,7 @@ The basic method of DocsServiceApp is to directly create and edit the data of Mi
 - Insert images in cells of Google Spreadsheet using the image blob.
 - Create new Google Spreadsheet by setting the custom header and footer.
 - Retrieve cell coordinates of cells with the quote prefix.
+- Retrieve named functions.
 
 ### [Google Slides](#googleslides)
 
@@ -383,6 +384,45 @@ console.log(res);
 
 - I answered this method to [this thread at Stackoverflow](https://stackoverflow.com/a/73616511).
 
+<a name="getnamedfunctions"></a>
+
+### 6. `getNamedFunctions()`
+
+![](images/fig5.png)
+
+This method is for retrieving the named functions from Google Spreadsheet using Google Apps Script.
+
+Recently, the named functions got to be able to be used in Google Spreadsheet. [Ref](https://workspaceupdates.googleblog.com/2022/08/named-functions-google-sheets.html) When several named functions are added, I thought that I wanted to retrieve these functions using a script. But, unfortunately, in the current stage, it seems that there are no built-in methods (SpreadsheetApp and Sheets API) for directly retrieving the named functions. So, I created this method.
+
+#### Sample script
+
+```javascript
+const spreadsheetId = "###"; // Google Spreadsheet ID
+const res =
+  DocsServiceApp.openBySpreadsheetId(spreadsheetId).getNamedFunctions();
+console.log(res);
+```
+
+#### Result
+
+When this script is run to the top sample situation in this section, the following result is obtained.
+
+```json
+[
+  {
+    "definedName": "CONTAINS",
+    "definedFunction": "LAMBDA(cell, range, NOT(ISERROR(MATCH(cell,range,0))))"
+  },
+  { "definedName": "SAMPLE1", "definedFunction": "LAMBDA(range, SUM(range))" }
+]
+```
+
+- Unfortunately, in the current stage, the description of the named function cannot be obtained.
+
+- At XLSX format, the named functions are used as LAMBDA function. If you want to directly use this LAMBDA function, for example, please put a function like =LAMBDA(range, SUM(range))(A1:A5) into a cell. By this, the LAMBDA function can be run. Of course, you can retrieve the function from this result and put it as the named function again.
+
+- I posted this method in my [blog](https://tanaikech.github.io/2022/09/28/retrieving-named-functions-from-google-spreadsheet-using-google-apps-script/).
+
 <a name="googleslides"></a>
 
 ## For Google Slides
@@ -697,5 +737,9 @@ There are no methods yet.
 - v1.1.0 (September 28, 2022)
 
   1. Added a new method of [`getQuotePrefixCells()`](#getQuotePrefixCells). This method can detect the cells with the quote prefix cells.
+
+- v1.2.0 (September 29, 2022)
+
+  1. Added a new method of [`getNamedFunctions()`](#getnamedfunctions). This method can retrieve the named functions from Google Spreadsheet.
 
 [TOP](#top)

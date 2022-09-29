@@ -7,6 +7,7 @@
       disassembleExcel,
       getCommentsAsObject,
       getImagesAsObject,
+      getNamedFunctionsAsObject,
       getQuotePrefixCellsAsObject,
       getSharedStrings,
       getStyleAsObject,
@@ -85,11 +86,30 @@
       getQuotePrefixCells() {
         return getQuotePrefixCellsAsObject.call(this);
       }
+
+      getNamedFunctions() {
+        return getNamedFunctionsAsObject.call(this);
+      }
     }
 
     ExcelApp.name = "ExcelApp";
 
     // --- end methods
+    getNamedFunctionsAsObject = function () {
+      var definedNames, root, xmlObj1;
+      xmlObj1 = getXmlObj.call(this, "xl/workbook.xml");
+      root = xmlObj1.getRootElement();
+      definedNames = root
+        .getChild("definedNames", root.getNamespace())
+        .getChildren();
+      return definedNames.map((e) => {
+        return {
+          definedName: e.getAttribute("name").getValue(),
+          definedFunction: e.getValue(),
+        };
+      });
+    };
+
     getQuotePrefixCellsAsObject = function () {
       var checkFilename, quotePrefix, sr, styler, xmlObj1, xmlObj2;
       if (this.mainObj.sheetsObj.sheetsObj.hasOwnProperty(this.obj.sheetName)) {
