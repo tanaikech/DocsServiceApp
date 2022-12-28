@@ -742,4 +742,8 @@ There are no methods yet.
 
   1. Added a new method of [`getNamedFunctions()`](#getnamedfunctions). This method can retrieve the named functions from Google Spreadsheet.
 
+- v1.2.1 (December 28, 2022)
+
+  1. Remove a bug in `ExcelApp`.
+  
 [TOP](#top)
