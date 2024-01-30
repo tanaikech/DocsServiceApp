@@ -745,5 +745,9 @@ There are no methods yet.
 - v1.2.1 (December 28, 2022)
 
   1. Remove a bug in `ExcelApp`.
-  
+
+- v1.2.2 (January 30, 2024)
+
+  1. Remove a bug in `ExcelApp`. When the inserted image had no data, an error occurred. This issue was removed.
+
 [TOP](#top)

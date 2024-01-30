@@ -405,7 +405,7 @@
             if (title) {
               temp.image.title = title.getValue();
             }
-            temp.image.blob = this.mainObj.fileObj[filename].setName(filename.split("/").pop()) || null;
+            temp.image.blob = (this.mainObj.fileObj[filename] && this.mainObj.fileObj[filename].setName(filename.split("/").pop())) || null;
             temp.image.innerCell = temp.range.colOff === 0 && temp.range.rowOff === 0 ? true : false;
           } else if (sp) {
             temp.drawing = {
